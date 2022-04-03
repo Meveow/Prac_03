@@ -9,6 +9,13 @@ Broken program to determine score status
 def main():
     score = float(input("Enter score: "))
     get_score(score)
+    random_score()
+
+
+def random_score():
+    score = random.randint(0, 100)
+    print(f"Random score: {score}")
+    get_score(score)
 
 
 def get_score(score):
