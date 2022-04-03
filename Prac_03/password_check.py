@@ -1,3 +1,4 @@
+"""Check length of password"""
 MIN_LENGTH = 5
 symbol = "*"
 
