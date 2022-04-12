@@ -1,13 +1,15 @@
 import random
-VALUES = []
+
+COLUMN = 6
 
 amount = int(input("How many quick picks? "))
 
-for line in range(amount):
-    line = random.randint(1, 45)
-    for line in range(6):
-        line = random.randint(1, 45)
-        VALUES.append(line)
-        VALUES.sort()
-        print(VALUES)
-        # print(line, end=' ')
+for c in range(amount):
+    values = []
+    for r in range(COLUMN):
+        num = random.randint(1, 45)
+        while num in values: #no repitition of numbers
+            num = random.randint(1, 45)
+        values.append(num)
+    values.sort()
+    print(" ".join(str(r) for r in values))
