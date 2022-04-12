@@ -14,6 +14,7 @@ def main():
     menu()
 
 def menu():
+    "Four choices in the menu."
     choice = ''
     while choice != 'q':
         print("Menu:\nL - List all books\nA - Add new book\nM - Mark a book as completed\nQ-Quit\n>>> ")
@@ -34,9 +35,21 @@ def list_books():
         print(line)
 
 def add_new():
-    pass
+    new_book = input("Title: ")
+    if new_book == ' ':
+        print("Input can not be blank")
+        new_author = input("Author: ")
+        if new_author == ' ':
+            print("Input can not be blank")
+            pages = int(input("Pages: "))
+            if pages == ' ' or pages <= 0:
+                print("Invalid input; enter a valid number")
+    FILENAME.append(new_book, new_author, pages)
+    print(f"{new_book} by {new_author}, ({pages} pages) added to Reading Tracker")
+    menu()
 
 def mark_complete():
+
     pass
 
 def quit():
