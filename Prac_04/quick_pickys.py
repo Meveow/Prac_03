@@ -4,11 +4,11 @@ LINE = 6
 
 amount = int(input("How many quick picks? "))
 
-for c in range(amount): #number of lines
+for c in range(amount): # number of lines
     values = []
-    for r in range(LINE): #six elements in each line
+    for r in range(LINE): # six elements in each line
         num = random.randint(1, 45)
-        while num in values: #no repitition of numbers
+        while num in values: # no repitition of numbers
             num = random.randint(1, 45)
         values.append(num)
     values.sort()
