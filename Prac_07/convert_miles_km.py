@@ -6,6 +6,7 @@ M_TO_KM = 1.60934
 
 
 class Conversion(App):
+
     def build(self):
         Window.size = (800, 400)
         self.title = "Conversion"
@@ -13,16 +14,29 @@ class Conversion(App):
         return self.root
 
     def handle_calculate(self, value):
-        result = float(value) * M_TO_KM
-        self.root.ids.output_label.text = str(result)
+        print("calculating")
+        try:
+            result = float(value) * M_TO_KM
+            self.root.ids.output_label.text = str(result)
+        except ValueError:
+            self.root.ids.input_number.text = '0.0'
+            self.root.ids.output_label.text = '0.0'
 
     def increment(self, value):
-        increase = int(value) + 1
-        self.root.ids.input_number.text = str(increase)
+        print("increasing")
+        try:
+            increase = float(value) + 1
+            self.root.ids.input_number.text = str(increase)
+        except ValueError:
+            self.root.ids.input_number.text = '0.0'
 
     def decrement(self, value):
-        decrease = int(value) - 1
-        self.root.ids.input_number.text = str(decrease)
+        print("decreasing")
+        try:
+            decrease = float(value) - 1
+            self.root.ids.input_number.text = str(decrease)
+        except ValueError:
+            self.root.ids.input_number.text = '0.0'
 
 
 Conversion().run()
