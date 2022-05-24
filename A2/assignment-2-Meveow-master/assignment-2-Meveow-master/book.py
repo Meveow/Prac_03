@@ -1,26 +1,28 @@
 """CP1404 - Assignment 2
 Evelyn Soong Kar Wai"""
 
+
 class Book:
     """Represent a Book object."""
 
-    def __init__(self, title="", author="", number_of_pages=0, requirement):
+    def __init__(self, title="", author="", number_of_pages=0, is_completed=""):
         """Initialise a Book instance."""
         self.title = title
         self.author = author
-        self.number_of_pages = 0
-        self.requirement = requirement
+        self.number_of_pages = number_of_pages
+        self.is_completed = True if is_completed == "c" else False
 
     def __str__(self):
-        pass
+        return f"{self.title} by {self.author}, {self.number_of_pages} pages. {self.is_completed} \n"
 
-    def requirement(self):
-        pass
+    def mark_required(self):
+        self.is_completed = "r"
 
-    def completed(self):
-        if book[3] == 'c\n':
-            return completed
+    def mark_completed(self):
+        self.is_completed = "c"
 
-    def long_book(self, number_of_pages):
-        if number_of_pages > 500:
-            return long
+    def is_long(self):
+        if self.number_of_pages > 500:
+            return True
+        else:
+            return False
