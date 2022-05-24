@@ -25,14 +25,17 @@ def run_tests():
     print(new_book)
 
     # Test mark_required()
+    print("Test mark_required():")
     new_book.mark_required()
     # TODO: Write tests to show the mark_required() method works
     assert not new_book.is_completed
     print(new_book)
 
     # Test is_long()
+    print("Test is_long():")
+    assert new_book.is_long()
     # TODO: Write tests to show the is_long() method works
-    assert new_book.number_of_pages == 501
+        # concluded in book.py
     # TODO: Add more tests, as appropriate
 
 
